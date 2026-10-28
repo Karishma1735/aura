@@ -61,7 +61,7 @@ function Hero() {
       </div>
       <div className="relative mx-auto h-[420px] w-full max-w-md lg:col-span-5 lg:h-[520px]" aria-hidden="true">
         <div className="absolute inset-6 rounded-[48px] bg-brand-tint" />
-        <Sparkle className="absolute -right-2 top-1/2 h-10 w-10 text-brand-mist" /><Sparkle className="absolute -left-3 top-1/3 h-6 w-6 text-brand-deep" />
+        <Sparkle className="absolute -right-2 top-1/2 h-10 w-10 text-tan" /><Sparkle className="absolute -left-3 top-1/3 h-6 w-6 text-bronze" />
         {heroCards.map(([n, m, p, pos], i) => (
           <motion.div key={n} animate={{ y: [0, i % 2 ? 8 : -8, 0] }} transition={{ duration: 5 + i, repeat: Infinity, ease: 'easeInOut' }} className={`absolute w-56 overflow-hidden rounded-card border border-brand-tint bg-cream shadow-brand ${pos}`}>
             <Thumb src={`https://images.unsplash.com/${p}?auto=format&fit=crop&w=500&q=70`} className="h-36 w-full" />
@@ -91,7 +91,7 @@ const features = [
   [Undo2, 'Delete without fear', 'Every delete comes with a five-second Undo — bulk deletes too.'],
   [Download, 'Yours to take along', 'Export your whole collection to CSV whenever you like. No lock-in.'],
   [Heart, 'Drafts & favourites', 'Keep works-in-progress as drafts, then publish with one smooth toggle.'],
-  [Sparkles, 'Joyful details', 'Gentle motion, blue-tinted shadows, and a paper-grain finish. Reduced motion respected.'],
+  [Sparkles, 'Joyful details', 'Gentle motion, warm-toned shadows, and a paper-grain finish. Reduced motion respected.'],
 ]
 
 function Features() {

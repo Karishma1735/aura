@@ -1,6 +1,6 @@
 # Cherrybook
 
-A midnight-blue-and-blue-gray recipe manager: editorial landing page plus a fully working CRUD dashboard.
+A charcoal-and-cream (tan & gold accents) recipe manager: editorial landing page plus a fully working CRUD dashboard.
 React + Vite + Tailwind + Framer Motion + React Hook Form + Zod. Data persists in `localStorage` (12 seeded recipes).
 
 ## Run
@@ -33,7 +33,7 @@ skeleton / empty / error states (Settings → "Simulate network errors") · CSV 
 
 ## Customising
 
-- **Colors:** `tailwind.config.js` → `theme.extend.colors` (brand = Midnight, brand-deep = Navy, brand-mist = Blue Gray, royal/ink, cream).
+- **Colors:** `tailwind.config.js` → `theme.extend.colors` (brand = Charcoal, brand-mist = Gold, tan, bronze, cream).
 - **Fonts:** swap the Google Fonts link in `index.html` and `fontFamily` in `tailwind.config.js`.
 - **Entity & fields:** edit `src/data/schema.js` (name, categories, zod rules), then the matching inputs in
   `EntityForm.jsx` and the display in `EntityCard.jsx` / `EntityTable.jsx` / `DetailPanel.jsx`.

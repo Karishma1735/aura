@@ -19,8 +19,8 @@ export function Sparkle({ className = 'h-4 w-4' }) {
 export function Logo({ onClick, compact = false }) {
   return (
     <a href="#/" onClick={onClick} className="group inline-flex items-center gap-2 rounded-full" aria-label="Cherrybook home">
-      <span className="grid h-9 w-9 place-items-center rounded-full bg-cherry text-cream transition-transform duration-300 group-hover:rotate-12"><Cherries className="h-5 w-5" /></span>
-      {!compact && <span className="font-display text-xl font-semibold tracking-tight">Cherry<span className="italic text-cherry">book</span></span>}
+      <span className="grid h-9 w-9 place-items-center rounded-full bg-brand text-cream transition-transform duration-300 group-hover:rotate-12"><Cherries className="h-5 w-5" /></span>
+      {!compact && <span className="font-display text-xl font-semibold tracking-tight">Cherry<span className="italic text-brand">book</span></span>}
     </a>
   )
 }

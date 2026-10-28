@@ -6,12 +6,12 @@ import { ENTITY } from '../data/schema'
 function Illustration() {
   return (
     <div className="relative mx-auto h-40 w-40">
-      <div className="absolute inset-0 rounded-full bg-cherry-tint/70" />
-      <motion.div className="absolute inset-0 grid place-items-center text-cherry" animate={{ y: [0, -6, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}>
+      <div className="absolute inset-0 rounded-full bg-brand-tint/70" />
+      <motion.div className="absolute inset-0 grid place-items-center text-brand" animate={{ y: [0, -6, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}>
         <Cherries className="h-24 w-24" />
       </motion.div>
-      <Sparkle className="absolute -right-1 top-3 h-6 w-6 text-cherry" />
-      <Sparkle className="absolute bottom-4 -left-3 h-4 w-4 text-cherry-deep" />
+      <Sparkle className="absolute -right-1 top-3 h-6 w-6 text-brand" />
+      <Sparkle className="absolute bottom-4 -left-3 h-4 w-4 text-brand-deep" />
     </div>
   )
 }

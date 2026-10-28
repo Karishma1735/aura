@@ -3,7 +3,7 @@ import { Pencil, Trash2 } from 'lucide-react'
 import { Thumb, StatusPill, CategoryPill, Toggle, InlineTitle, Checkbox } from './Parts'
 import { fmtDate, fmtTime } from '../lib/utils'
 
-const TH = 'label-caps sticky top-0 z-10 bg-cream-warm px-4 py-3.5 text-left text-ink/60 border-b border-cherry/30'
+const TH = 'label-caps sticky top-0 z-10 bg-cream-warm px-4 py-3.5 text-left text-ink/60 border-b border-brand/30'
 
 export function EntityTable({ items, selected, freshId, allChecked, someChecked, onSelectAll, onSelect, onOpen, onEdit, onDelete, onToggle, onRename }) {
   return (
@@ -22,7 +22,7 @@ export function EntityTable({ items, selected, freshId, allChecked, someChecked,
               {items.map((r) => (
                 <motion.tr key={r.id} layout initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scaleY: 0.2, transition: { duration: 0.25 } }}
                   onClick={() => onOpen(r)}
-                  className={`group cursor-pointer border-b border-cherry-tint/60 transition-colors odd:bg-cream even:bg-cream-warm/70 hover:bg-cherry-tint/60 ${selected.has(r.id) ? '!bg-cherry-tint' : ''} ${freshId === r.id ? 'fresh' : ''}`}>
+                  className={`group cursor-pointer border-b border-brand-tint/60 transition-colors odd:bg-cream even:bg-cream-warm/70 hover:bg-brand-tint/60 ${selected.has(r.id) ? '!bg-brand-tint' : ''} ${freshId === r.id ? 'fresh' : ''}`}>
                   <td className="px-4 py-3"><Checkbox checked={selected.has(r.id)} onChange={() => onSelect(r.id)} label={`Select ${r.name}`} /></td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">

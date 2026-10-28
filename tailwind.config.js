@@ -1,12 +1,14 @@
-/** Brand tokens live here. Change a hex and the whole app re-themes. */
+/** Palette: Blue Gray #88a9c3 · Midnight #2b4257 · Navy #14202e · Royal #091235. Brand tokens live here. Change a hex and the whole app re-themes. */
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        cherry: { DEFAULT: '#C8102E', deep: '#9B0E24', tint: '#F4D3D8' },
-        cream: { DEFAULT: '#FFF6E5', warm: '#F6E9D2' },
-        ink: '#2B1416',
+        brand: { DEFAULT: '#2b4257', deep: '#14202e', tint: '#D5E1EB', mist: '#88a9c3' },
+        cream: { DEFAULT: '#EEF3F7', warm: '#E1EAF1' },
+        ink: '#091235',
+        royal: '#091235',
+        danger: '#A32A2A',
         success: { DEFAULT: '#3F7D58', deep: '#2F6245' },
         warning: '#D98E04',
       },
@@ -16,8 +18,8 @@ export default {
       },
       borderRadius: { card: '24px' },
       boxShadow: {
-        cherry: '0 18px 40px -18px rgba(200,16,46,.35)',
-        soft: '0 6px 20px -10px rgba(155,14,36,.25)',
+        brand: '0 18px 40px -18px rgba(43,66,87,.35)',
+        soft: '0 6px 20px -10px rgba(20,32,46,.25)',
       },
       keyframes: {
         shimmer: { '100%': { transform: 'translateX(100%)' } },

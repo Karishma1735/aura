@@ -22,8 +22,8 @@ const SORTS = {
 const Select = ({ label, value, onChange, children }) => (
   <label className="relative">
     <span className="sr-only">{label}</span>
-    <select value={value} onChange={(e) => onChange(e.target.value)} className="cursor-pointer appearance-none rounded-full border border-cherry-tint bg-cream py-2.5 pl-4 pr-9 text-sm font-medium transition hover:border-cherry focus:border-cherry">{children}</select>
-    <svg className="pointer-events-none absolute right-3.5 top-1/2 h-3 w-3 -translate-y-1/2 text-cherry" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"><path d="m2 4 4 4 4-4" /></svg>
+    <select value={value} onChange={(e) => onChange(e.target.value)} className="cursor-pointer appearance-none rounded-full border border-brand-tint bg-cream py-2.5 pl-4 pr-9 text-sm font-medium transition hover:border-brand focus:border-brand">{children}</select>
+    <svg className="pointer-events-none absolute right-3.5 top-1/2 h-3 w-3 -translate-y-1/2 text-brand" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"><path d="m2 4 4 4 4-4" /></svg>
   </label>
 )
 
@@ -97,9 +97,9 @@ export function RecipeManager({ store, query, addRequested, onAddHandled }) {
           <span className="ml-2 align-middle text-base font-sans font-medium text-ink/50">{filtered.length}</span></h2>
         <div className="flex items-center gap-2">
           <button className="btn btn-outline !py-2.5" onClick={() => exportCsv(filtered)} disabled={!filtered.length}><Download className="h-4 w-4" /><span className="hidden sm:inline">Export CSV</span></button>
-          <div className="flex rounded-full border border-cherry-tint bg-cream-warm p-1" role="group" aria-label="View">
+          <div className="flex rounded-full border border-brand-tint bg-cream-warm p-1" role="group" aria-label="View">
             {[['grid', LayoutGrid, 'Grid view'], ['table', Rows3, 'Table view']].map(([v, Icon, label]) => (
-              <button key={v} aria-label={label} aria-pressed={view === v} onClick={() => setView(v)} className={`grid h-9 w-9 place-items-center rounded-full transition ${view === v ? 'bg-cherry text-cream' : 'text-ink/60 hover:text-cherry'}`}><Icon className="h-4 w-4" /></button>
+              <button key={v} aria-label={label} aria-pressed={view === v} onClick={() => setView(v)} className={`grid h-9 w-9 place-items-center rounded-full transition ${view === v ? 'bg-brand text-cream' : 'text-ink/60 hover:text-brand'}`}><Icon className="h-4 w-4" /></button>
             ))}
           </div>
         </div>
@@ -118,7 +118,7 @@ export function RecipeManager({ store, query, addRequested, onAddHandled }) {
             <span className="text-sm font-medium">{selected.size} selected</span>
             <div className="flex gap-2">
               <button className="rounded-full px-3 py-1.5 text-sm hover:bg-cream/15" onClick={() => setSelected(new Set())}>Clear</button>
-              <button className="inline-flex items-center gap-1.5 rounded-full bg-cherry px-4 py-1.5 text-sm font-semibold hover:bg-cherry-deep" onClick={() => setConfirm(items.filter((r) => selected.has(r.id)))}><Trash2 className="h-4 w-4" />Delete</button>
+              <button className="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-1.5 text-sm font-semibold hover:bg-brand-deep" onClick={() => setConfirm(items.filter((r) => selected.has(r.id)))}><Trash2 className="h-4 w-4" />Delete</button>
             </div>
           </div>
         )}

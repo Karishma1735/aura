@@ -36,7 +36,7 @@ function ToastItem({ t, dismiss }) {
       layout initial={{ opacity: 0, x: 60, scale: 0.96 }} animate={{ opacity: 1, x: 0, scale: 1 }} exit={{ opacity: 0, x: 60, scale: 0.96 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
       role={error ? 'alert' : 'status'}
-      className={`pointer-events-auto relative overflow-hidden rounded-2xl shadow-cherry ${error ? 'bg-cherry text-cream' : 'bg-ink text-cream'}`}
+      className={`pointer-events-auto relative overflow-hidden rounded-2xl shadow-brand ${error ? 'bg-danger text-cream' : 'bg-ink text-cream'}`}
     >
       <div className="flex items-center gap-3 px-4 py-3.5">
         {error ? <AlertCircle className="h-5 w-5 shrink-0" /> : <CheckCircle2 className="h-5 w-5 shrink-0 text-[#7FD3A0]" />}

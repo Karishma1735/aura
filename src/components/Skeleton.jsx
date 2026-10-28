@@ -13,7 +13,7 @@ export function CardSkeleton() {
 
 export function RowSkeleton() {
   return (
-    <div className="flex items-center gap-4 border-b border-cherry-tint/60 px-5 py-4" aria-hidden="true">
+    <div className="flex items-center gap-4 border-b border-brand-tint/60 px-5 py-4" aria-hidden="true">
       <div className="shimmer h-5 w-5 rounded-md" /><div className="shimmer h-11 w-11 rounded-xl" />
       <div className="shimmer h-4 flex-1 rounded-full" /><div className="shimmer hidden h-4 w-24 rounded-full sm:block" /><div className="shimmer h-6 w-20 rounded-full" />
     </div>

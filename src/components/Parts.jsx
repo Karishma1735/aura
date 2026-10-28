@@ -4,25 +4,25 @@ import { Check, Clock, Pencil } from 'lucide-react'
 import { Cherries } from './Logo'
 import { cn } from '../lib/utils'
 
-/** Image with a cherry-tint fallback if the URL is empty or broken. */
+/** Image with a brand-tint fallback if the URL is empty or broken. */
 export function Thumb({ src, alt = '', className, zoom = false }) {
   const [bad, setBad] = useState(false)
   useEffect(() => setBad(false), [src])
   if (!src || bad) {
-    return <div className={cn('grid place-items-center bg-cherry-tint text-cherry/70', className)} role="img" aria-label={alt || 'No image'}><Cherries className="h-1/3 w-1/3 max-h-12 max-w-12" /></div>
+    return <div className={cn('grid place-items-center bg-brand-tint text-brand/70', className)} role="img" aria-label={alt || 'No image'}><Cherries className="h-1/3 w-1/3 max-h-12 max-w-12" /></div>
   }
   return <img src={src} alt={alt} loading="lazy" onError={() => setBad(true)} className={cn('object-cover', zoom && 'transition-transform duration-500 ease-out group-hover:scale-105', className)} />
 }
 
 export function StatusPill({ published }) {
   return (
-    <span className={cn('pill', published ? 'bg-success/15 text-success-deep' : 'bg-cherry-tint text-cherry-deep')}>
-      <span className={cn('h-1.5 w-1.5 rounded-full', published ? 'bg-success' : 'bg-cherry')} />{published ? 'Published' : 'Draft'}
+    <span className={cn('pill', published ? 'bg-success/15 text-success-deep' : 'bg-brand-tint text-brand-deep')}>
+      <span className={cn('h-1.5 w-1.5 rounded-full', published ? 'bg-success' : 'bg-brand')} />{published ? 'Published' : 'Draft'}
     </span>
   )
 }
 
-export const CategoryPill = ({ children }) => <span className="pill bg-cherry-tint text-cherry-deep">{children}</span>
+export const CategoryPill = ({ children }) => <span className="pill bg-brand-tint text-brand-deep">{children}</span>
 
 export const CookTime = ({ text }) => <span className="inline-flex items-center gap-1 text-sm text-ink/70"><Clock className="h-3.5 w-3.5" />{text}</span>
 
@@ -54,13 +54,13 @@ export function InlineTitle({ value, onSave, className }) {
       <input ref={ref} value={draft} maxLength={60} aria-label="Edit name" onClick={(e) => e.stopPropagation()}
         onChange={(e) => setDraft(e.target.value)} onBlur={commit}
         onKeyDown={(e) => { if (e.key === 'Enter') commit(); if (e.key === 'Escape') { setDraft(value); setEditing(false) } }}
-        className={cn('w-full rounded-lg border border-cherry bg-cream px-2 py-0.5 outline-none', className)} />
+        className={cn('w-full rounded-lg border border-brand bg-cream px-2 py-0.5 outline-none', className)} />
     )
   }
   return (
     <span className="group/inline inline-flex min-w-0 items-center gap-1.5">
       <span className={cn('truncate', className)} onDoubleClick={(e) => { e.stopPropagation(); setDraft(value); setEditing(true) }} title="Double-click to rename">{value}</span>
-      <button type="button" aria-label={`Rename ${value}`} onClick={(e) => { e.stopPropagation(); setDraft(value); setEditing(true) }} className="shrink-0 rounded-full p-1 text-ink/40 opacity-0 transition hover:text-cherry focus:opacity-100 group-hover/inline:opacity-100"><Pencil className="h-3.5 w-3.5" /></button>
+      <button type="button" aria-label={`Rename ${value}`} onClick={(e) => { e.stopPropagation(); setDraft(value); setEditing(true) }} className="shrink-0 rounded-full p-1 text-ink/40 opacity-0 transition hover:text-brand focus:opacity-100 group-hover/inline:opacity-100"><Pencil className="h-3.5 w-3.5" /></button>
     </span>
   )
 }
@@ -68,7 +68,7 @@ export function InlineTitle({ value, onSave, className }) {
 export function Checkbox({ checked, onChange, label, indeterminate }) {
   return (
     <button type="button" role="checkbox" aria-checked={indeterminate ? 'mixed' : checked} aria-label={label} onClick={(e) => { e.stopPropagation(); onChange(!checked) }}
-      className={cn('grid h-5 w-5 shrink-0 place-items-center rounded-md border transition', checked || indeterminate ? 'border-cherry bg-cherry text-cream' : 'border-cherry/40 bg-cream hover:border-cherry')}>
+      className={cn('grid h-5 w-5 shrink-0 place-items-center rounded-md border transition', checked || indeterminate ? 'border-brand bg-brand text-cream' : 'border-brand/40 bg-cream hover:border-brand')}>
       {indeterminate ? <span className="h-0.5 w-2.5 rounded bg-cream" /> : checked && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
     </button>
   )

@@ -42,7 +42,7 @@ export function Overlay({ onClose, label, variant = 'drawer', children, width = 
           animate={drawer ? { x: 0 } : { opacity: 1, scale: 1, y: 0 }}
           exit={drawer ? { x: '100%' } : { opacity: 0, scale: 0.94, y: 12 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
-          className={`pointer-events-auto flex w-full flex-col bg-cream shadow-cherry ${width} ${drawer ? 'h-full rounded-l-[28px] border-l border-cherry-tint' : 'max-h-[90vh] rounded-card border border-cherry-tint'}`}
+          className={`pointer-events-auto flex w-full flex-col bg-cream shadow-brand ${width} ${drawer ? 'h-full rounded-l-[28px] border-l border-brand-tint' : 'max-h-[90vh] rounded-card border border-brand-tint'}`}
         >
           {children}
         </motion.div>

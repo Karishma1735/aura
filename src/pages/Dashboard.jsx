@@ -40,9 +40,9 @@ export function Dashboard({ page, onNavigate }) {
           {page !== 'settings' && (
             <label className="relative order-3 w-full sm:order-none sm:w-72">
               <span className="sr-only">Search recipes</span>
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-cherry" />
-              <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search recipes, tags…" className="w-full rounded-full border border-cherry-tint bg-cream-warm py-3 pl-11 pr-10 text-sm transition placeholder:text-ink/50 focus:border-cherry" />
-              {query && <button type="button" aria-label="Clear search" onClick={() => setQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 hover:bg-cherry-tint"><X className="h-4 w-4" /></button>}
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-brand" />
+              <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search recipes, tags…" className="w-full rounded-full border border-brand-tint bg-cream-warm py-3 pl-11 pr-10 text-sm transition placeholder:text-ink/50 focus:border-brand" />
+              {query && <button type="button" aria-label="Clear search" onClick={() => setQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 hover:bg-brand-tint"><X className="h-4 w-4" /></button>}
             </label>
           )}
           <button className="btn btn-primary group" onClick={addNew}><Plus className="h-4 w-4 transition-transform duration-300 group-hover:rotate-90" />Add {ENTITY.singular}</button>
@@ -52,7 +52,7 @@ export function Dashboard({ page, onNavigate }) {
           <section aria-label="Overview" className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {status === 'loading' ? Array.from({ length: 4 }, (_, i) => <StatSkeleton key={i} />) : (
               <>
-                <StatCard index={0} tone="cherry" label={`Total ${ENTITY.plural.toLowerCase()}`} value={stats.total} icon={ChefHat} spark={weekSeries(items)} />
+                <StatCard index={0} tone="brand" label={`Total ${ENTITY.plural.toLowerCase()}`} value={stats.total} icon={ChefHat} spark={weekSeries(items)} />
                 <StatCard index={1} label="Published" value={stats.published} icon={CheckCircle2} spark={weekSeries(items, (r) => r.published)} />
                 <StatCard index={2} label="Added this week" value={stats.week} icon={Sparkles} spark={weekSeries(items, (r) => Date.now() - new Date(r.createdAt) < 7 * 864e5)} />
                 <StatCard index={3} label="Avg. cook time" value={stats.avg} suffix="m" icon={Timer} spark={[2, 4, 3, 5, 4, 6, 5]} />
